@@ -1,0 +1,34 @@
+body {
+  background-color: #282c35 !important;
+}
+#titulo {
+  color: #fff;
+  text-align: center;
+}
+#textLabel {
+  color: rgb(187, 181, 181);
+  display: block;
+ 
+}
+
+#input-content {
+  max-width: 120px !important;
+}
+
+#basic-addon3 {
+  font-size: 13px;
+}
+
+.form-padre {
+ display: inline-flex;
+}
+#principal_title{
+  font-size: 30px;
+  text-align: center;
+  margin-top: 20px;
+  color: #fff;
+}
+
+#abuelo{
+  margin-top: 17%; 
+}
