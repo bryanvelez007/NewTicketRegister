@@ -1,6 +1,11 @@
 import React, { useState } from "react";
+import fire from '../fire.js'
 
 import "bootstrap/dist/css/bootstrap.min.css";
+
+
+
+    
 
 const Main = () => {
   const [state, setstate] = useState({ ticketid: "" });
@@ -10,6 +15,7 @@ const Main = () => {
   const handleId = () => {
     var url = "http://localhost:4000";
     var data = { id: state.ticketid };
+    var fecha =  new Date().getTime();
 
     fetch(url, {
       method: "POST", // or 'PUT'
@@ -18,9 +24,14 @@ const Main = () => {
         "Content-Type": "application/json",
       },
     })
+
+    
+    
+
       .then((res) => res.json())
       .catch((error) => console.error("Error:", error))
-      .then((response) => console.log("Success:", response));
+      .then((response) =>  fire.database().ref().child(fecha).set(response));
+
   };
 
   return (
