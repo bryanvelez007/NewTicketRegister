@@ -1,11 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
-import Main from './component/Main'
+import Table from './component/table.js'
+import Ticket from './component/Main.js'
 
 
 function App() {
   return (
-    <Main/>
+    <Ticket/>
   );
 }
 

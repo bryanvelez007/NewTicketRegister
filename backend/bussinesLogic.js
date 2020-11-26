@@ -33,10 +33,14 @@ async function getTicket(idTicket) {
    
     var datos = {};
 
-    for (var b of document.querySelectorAll("a.request-empcode,div.info-module")) {
-      if (b.textContent.search(/Empcode:/gi) > -1) {
-        datos.empcode = b.textContent.split(":").pop().trim();
+    for (var d of document.querySelectorAll("a.request-empcode")) {
+      if (d.textContent.search(/Empcode:/gi) > -1) {
+        datos.empcode = d.textContent.split(":").pop().trim();
       }
+    }
+
+    for (var b of document.querySelectorAll("div.info-module")) {
+     
       if (b.textContent.search(/Owner:/gi) > -1) {
         datos.owner = b.textContent.split(":").pop().trim();
       }
@@ -54,8 +58,8 @@ async function getTicket(idTicket) {
         
       }
     }
-    var fecha = "010203"
-   
+    
+    datos.ticketsystem = "on";
     return datos;
   });
   return result;
